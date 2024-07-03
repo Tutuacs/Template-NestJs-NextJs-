@@ -7,8 +7,8 @@ import Navbar from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Morelate",
-  description: "Morelate Distribuidora",
+  title: "FullStack",
+  description: "Full-Stack Next&Nestjs",
 };
 
 export default function RootLayout({
