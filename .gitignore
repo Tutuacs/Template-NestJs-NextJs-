@@ -128,3 +128,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+/api/dist
+/api/node_modules
+/api/prisma/migrations
+
+/client/dist
+/client/node_modules
+/client/.next

@@ -1,0 +1,36 @@
+services:
+  full-stack-db:
+    image: postgres:latest
+    container_name: full-stack-db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - 2345:5432
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}" ]
+      interval: 5s
+    # networks:
+    #   - full-stack
+
+#   full-stack-back:
+#     container_name: full-stack-back
+#     build:
+#       context: .
+#       target: server
+#     env_file:
+#       - .env
+#     command: pnpm run prod
+#     ports:
+#       - 3333:3333
+#     networks:
+#       - full-stack
+#     depends_on:
+#       - serviceName: full-stack-db
+#         condition: service_healthy
+
+# networks:
+#   full-stack:
+#     driver: bridge
