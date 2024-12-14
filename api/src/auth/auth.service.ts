@@ -112,8 +112,10 @@ export class AuthService {
   }) {
     const token = (await this.createToken(profile)).token;
     const refreshToken = (await this.createRefreshToken(profile)).token;
+    const atualizedProfile = await this.authFunctions.profileInfo(profile.id);
 
     return {
+      profile: atualizedProfile,
       access: token,
       refresh: refreshToken,
       expiresIn: new Date().setTime(new Date().getTime() + this.EXPIRE_TIME),
