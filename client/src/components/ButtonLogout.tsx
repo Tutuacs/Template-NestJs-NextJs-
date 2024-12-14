@@ -11,7 +11,7 @@ export default function ButtonLogout() {
       redirect: false,
     });
 
-    router.replace("/");
+    router.push("/login");
   }
 
   return (

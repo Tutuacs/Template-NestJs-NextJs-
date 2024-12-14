@@ -26,12 +26,10 @@ export default function Register() {
     });
 
     if (result?.status !== 201) {
-      console.log(result);
       return;
     }
     
-    router.replace('/login');
-    redirect('/login');
+    router.push('/login');
   }
 
   return (

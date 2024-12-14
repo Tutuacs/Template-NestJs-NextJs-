@@ -22,11 +22,12 @@ export default function Login() {
     });
 
     if (result?.error) {
-      console.log(result);
       return;
     }
 
-    router.replace('/');
+    setTimeout(() => {
+      router.push('/home');
+    }, 100);
   }
 
 

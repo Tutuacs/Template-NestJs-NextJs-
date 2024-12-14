@@ -18,11 +18,13 @@ const useFetch = (title?: string) => {
     });
 
     const response = await res.json();
+    session.profile = response.profile;
+
     session.tokens = response;
   };
 
   const fetchWithAuth = async (url: string, options: RequestInit = {}) => {
-    if (!session) return;
+    if (!session || !session.profile) return;
 
     const headers = {
       ...options.headers,
@@ -34,7 +36,7 @@ const useFetch = (title?: string) => {
       headers.Authorization = `Bearer ${session.tokens.access}`;
     }
     
-    const res = await fetch(url, { ...options, headers });
+    const res = await fetch(`${Backend_URL}${url}`, { ...options, headers });
 
     return handleResponse(res);
   };

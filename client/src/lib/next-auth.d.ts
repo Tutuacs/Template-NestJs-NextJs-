@@ -10,6 +10,12 @@ declare module "next-auth" {
     };
 
     tokens: {
+      profile: {
+        id: number;
+        email: string;
+        role: number;
+        name: string;
+      };
       access: string;
       refresh: string;
       expiresIn: number;
@@ -29,6 +35,12 @@ declare module "next-auth/jwt" {
     };
 
     tokens: {
+      profile: {
+        id: number;
+        email: string;
+        role: number;
+        name: string;
+      };
       access: string;
       refresh: string;
       expiresIn: number;
