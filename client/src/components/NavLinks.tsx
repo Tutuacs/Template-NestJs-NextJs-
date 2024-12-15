@@ -11,48 +11,62 @@ export default function NavLinks() {
 
   if (session?.profile?.role === ROLE.ADMIN) {
     return (
-      <>
-        <Link className="p-2" href="/home">
-          Home
-        </Link>
-        <>
-        <Link className="p-2" href="/">
-          Users
-        </Link>
-        <Link className="p-2" href="/">
-          AdminName {session?.profile?.name}
-        </Link>
-        <ButtonLogout />
-        </>
-      </>
+      <main>
+        <div className="flex p-4 flex-row justify-between items-center">
+          <div className="flex space-x-4">
+            <Link className="p-2" href="/home">
+              Home
+            </Link>
+            <Link className="p-2" href="/">
+              Users
+            </Link>
+            <Link className="p-2" href="/">
+              AdminName {session?.profile?.name}
+            </Link>
+          </div>
+          <div className="flex space-x-4">
+            <ButtonLogout />
+          </div>
+        </div>
+      </main>
     );
   } else if (session?.profile?.role === ROLE.USER) {
     return (
-      <>
-        <Link className="p-2" href="/home">
-          Home
-        </Link>
-        <>
-        <Link className="p-2" href="/">
-          UserName {session?.profile?.name}
-        </Link>
-        <ButtonLogout />
-        </>
-      </>
+      <main>
+        <div className="flex p-4 flex-row justify-between items-center">
+          <div className="flex space-x-4">
+            <Link className="p-2" href="/home">
+              Home
+            </Link>
+            <Link className="p-2" href="/">
+              {session?.profile?.name}
+            </Link>
+          </div>
+          <div className="flex space-x-4">
+            <ButtonLogout />
+          </div>
+        </div>
+      </main>
     );
   } else {
     return (
-      <>
-        <Link className="p-2" href="/">
-          Home
-        </Link>
-        <Link className="p-2" href="/">
-          Default
-        </Link>
-        <Link className="p-2" href="/login">
-          Login
-        </Link>
-      </>
+      <main>
+        <div className="flex p-4 flex-row justify-between items-center">
+          <div className="flex space-x-4">
+            <Link className="p-2" href="/">
+              Home
+            </Link>
+            <Link className="p-2 text-gray-800" href="/">
+              Not logged
+            </Link>
+          </div>
+          <div className="flex space-x-4">
+            <Link className="p-2" href="/login">
+              Login
+            </Link>
+          </div>
+        </div>
+      </main>
     );
   }
 }

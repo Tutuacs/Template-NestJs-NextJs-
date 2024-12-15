@@ -12,16 +12,13 @@ interface PrivateLayoutProps {
 export default async function HomeLayout({ children }: PrivateLayoutProps) {
     const session = await getServerSession(authOptions);
 
-    console.log(session)
-
     if (!session) {
         redirect("/login")
     }
 
     return (
         <main>
-            <Navbar />
-            <div className="mt-28">{children}</div>
+            {children}
         </main>
     );
 }

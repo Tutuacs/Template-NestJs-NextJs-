@@ -21,7 +21,6 @@ export default function Forgot() {
     });
 
     if (result?.status !== 200) {
-      console.log(result);
       return;
     }
   }
