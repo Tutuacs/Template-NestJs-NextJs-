@@ -1,1 +1,1 @@
-export const Backend_URL = "https://back-gabs-template-tutuacs-projects.vercel.app";
+export const Backend_URL = "https://template-nest-js-next-jsback.vercel.app";
