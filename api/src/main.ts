@@ -8,7 +8,8 @@ async function bootstrap() {
   app.enableCors({
     origin: ['*','https://template-nest-js-next-jsfront.vercel.app'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true
+    allowedHeaders: "*",
+    credentials: true,
   });
 
   app.useGlobalPipes(
