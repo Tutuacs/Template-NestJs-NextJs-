@@ -1,1 +1,3 @@
-export const Backend_URL = "https://template-nest-js-next-jsback.vercel.app";
+import { env } from "process";
+
+export const Backend_URL = env.BACK_URL

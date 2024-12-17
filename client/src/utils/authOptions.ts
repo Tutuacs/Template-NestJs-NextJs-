@@ -1,5 +1,4 @@
 import { NextAuthOptions } from "next-auth";
-import { env } from "process";
 import CredentialsProvider from "next-auth/providers/credentials"
 import { JWT } from "next-auth/jwt";
 import { Backend_URL } from "@/lib/Constants";
